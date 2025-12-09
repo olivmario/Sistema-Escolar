@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joias Sacras: As Igrejas Mais Bonitas do Brasil</title>
+    <meta name="description" content="Uma galeria das igrejas mais belas e históricas do Brasil.">
+    
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="/src/main/resources/static/arquivoteste.css">
+
+    <!-- Tailwind CSS (Framework Utilitário) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fontes (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="antialiased">
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 transition-all duration-300 py-6" id="navbar">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-bold serif-font flex items-center gap-2 group">
+                <i data-lucide="church" class="logo-icon w-8 h-8 transition-colors group-hover:text-yellow-400"></i>
+                <span class="tracking-wide">Sacro Brasil</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#destaques" class="nav-link text-white hover:text-yellow-400 transition-colors uppercase text-xs tracking-[0.2em] font-bold">Destaques</a>
+                <a href="#historia" class="nav-link text-white hover:text-yellow-400 transition-colors uppercase text-xs tracking-[0.2em] font-bold">História</a>
+                <a href="#visitar" class="px-5 py-2 border border-white text-white hover:bg-white hover:text-black transition-all rounded-sm uppercase text-xs tracking-widest font-bold">Visitar</a>
+            </div>
+
+            <!-- Botão Mobile -->
+            <button class="md:hidden text-white focus:outline-none" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-neutral-900 p-6 shadow-xl md:hidden border-t border-gray-800">
+            <div class="flex flex-col space-y-4 text-center">
+                <a href="#destaques" class="text-gray-300 hover:text-white py-2 uppercase text-sm tracking-widest">Destaques</a>
+                <a href="#historia" class="text-gray-300 hover:text-white py-2 uppercase text-sm tracking-widest">História</a>
+                <a href="#visitar" class="text-yellow-400 py-2 uppercase text-sm tracking-widest font-bold">Planejar Visita</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg flex items-center justify-center text-center px-4">
+        <div class="hero-overlay"></div>
+        <div class="relative z-10 max-w-4xl mx-auto text-white p-6 animate-fade-in">
+            <span class="uppercase tracking-[0.4em] text-xs md:text-sm text-yellow-400 mb-6 block font-bold">Arquitetura & Fé</span>
+            <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight drop-shadow-lg">Catedrais da Alma Brasileira</h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 font-light max-w-2xl mx-auto leading-relaxed">
+                Do barroco dourado de Minas Gerais à fé sertaneja do Ceará. Descubra os templos que contam a história do nosso povo.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#destaques" class="inline-block bg-yellow-600 text-white py-4 px-10 hover:bg-yellow-500 transition-all duration-300 uppercase tracking-widest text-xs font-bold rounded-sm shadow-lg">
+                    Iniciar Jornada
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white opacity-70">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </header>
+
+    <!-- Seção de Galeria (Gerada via JS) -->
+    <section id="destaques" class="py-24 px-4 bg-white relative">
+        <!-- Decoration Background -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gray-50 rounded-full blur-3xl -z-10"></div>
+        
+        <div class="container mx-auto max-w-7xl">
+            <div class="text-center mb-20">
+                <span class="text-yellow-600 font-bold tracking-widest uppercase text-xs mb-2 block">Nossa Seleção</span>
+                <h2 class="text-4xl md:text-5xl text-gray-900 mb-6">Obras Primas da Arquitetura</h2>
+                <div class="divider-gold"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                    Uma curadoria das construções religiosas mais impactantes, unindo o passado colonial ao modernismo audacioso.
+                </p>
+            </div>
+
+            <!-- O Grid será preenchido pelo JavaScript -->
+            <div id="church-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Cards injetados aqui -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre/História -->
+    <section id="historia" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1594838612502-c94179374092?q=80&w=1000&auto=format&fit=crop" alt="Detalhe Barroco" class="rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover h-[500px]">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-3xl font-bold mb-6 text-gray-900">O Barroco e o Moderno</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        A arquitetura religiosa no Brasil não é apenas sobre religião; é sobre a evolução da nossa identidade artística. Desde o ouro abundante nas naves de Salvador e Ouro Preto até as curvas de concreto armado de Niemeyer em Brasília.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Cada igreja carrega em suas paredes séculos de devoção, arte e a própria formação da sociedade brasileira.
+                    </p>
+                    <button class="text-yellow-700 font-bold uppercase tracking-widest text-xs border-b-2 border-yellow-700 pb-1 hover:text-yellow-900 transition-colors">
+                        Ler História Completa
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-pattern text-white py-16 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-8 flex justify-center">
+                <i data-lucide="church" class="w-10 h-10 text-yellow-500"></i>
+            </div>
+            <h4 class="text-2xl serif-font mb-6">Sacro Brasil</h4>
+            <div class="flex justify-center space-x-6 mb-8 text-gray-400">
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="mail" class="w-5 h-5"></i></a>
+            </div>
+            <p class="text-gray-500 text-sm">
+                &copy; 2024 Sacro Brasil. Desenvolvido para demonstração.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script>
+        // Inicializar ícones Lucide
+        lucide.createIcons();
+
+        // Dados das Igrejas
+        const churches = [
+            {
+                name: "Basílica de N. Sra. das Dores",
+                location: "Juazeiro do Norte, CE",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Bas%C3%ADlica_Santu%C3%A1rio_de_Nossa_Senhora_das_Dores_-_Juazeiro_do_Norte.jpg/800px-Bas%C3%ADlica_Santu%C3%A1rio_de_Nossa_Senhora_das_Dores_-_Juazeiro_do_Norte.jpg",
+                desc: "O coração da fé no Nordeste e lar do Padre Cícero. Um marco de devoção popular e história sertaneja.",
+                style: "Neoclássico / Popular"
+            },
+            {
+                name: "Igreja de São Francisco de Assis",
+                location: "Ouro Preto, MG",
+                image: "https://images.unsplash.com/photo-1628127599043-46237887754b?q=80&w=800&auto=format&fit=crop",
+                desc: "A obra-prima de Aleijadinho. O expoente máximo do Barroco Mineiro e Rococó, declarada uma das 7 Maravilhas de Origem Portuguesa.",
+                style: "Barroco Mineiro"
+            },
+            {
+                name: "Catedral Metropolitana",
+                location: "Brasília, DF",
+                image: "https://images.unsplash.com/photo-1518182170546-07fa6ee049cb?q=80&w=800&auto=format&fit=crop",
+                desc: "Projetada por Oscar Niemeyer, suas 16 colunas de concreto representam mãos se elevando ao céu. Um ícone do modernismo.",
+                style: "Modernista"
+            },
+            {
+                name: "Igreja e Convento de São Francisco",
+                location: "Salvador, BA",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Salvador_-_Igreja_de_S%C3%A3o_Francisco_2016-10-14.jpg/800px-Salvador_-_Igreja_de_S%C3%A3o_Francisco_2016-10-14.jpg",
+                desc: "Conhecida como a 'Igreja de Ouro', seu interior é revestido com centenas de quilos de ouro, exemplificando a riqueza do período colonial.",
+                style: "Barroco Dourado"
+            },
+            {
+                name: "Catedral de Pedra",
+                location: "Canela, RS",
+                image: "https://images.unsplash.com/photo-1596401057633-5b8782c5f7d6?q=80&w=800&auto=format&fit=crop",
+                desc: "Imponente em estilo gótico inglês, possui uma torre de 65 metros e um carrilhão de 12 sinos de bronze.",
+                style: "Gótico Inglês"
+            },
+            {
+                name: "Igreja da Candelária",
+                location: "Rio de Janeiro, RJ",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Candelaria_Church%2C_Rio_de_Janeiro%2C_Brasil.jpg/800px-Candelaria_Church%2C_Rio_de_Janeiro%2C_Brasil.jpg",
+                desc: "Uma das principais obras artísticas do século XIX no Brasil, destacando-se pela fachada voltada para a Baía de Guanabara.",
+                style: "Neoclássico"
+            }
+        ];
+
+        // Função para Renderizar os Cards
+        const grid = document.getElementById('church-grid');
+
+        function renderChurches() {
+            grid.innerHTML = churches.map((church, index) => `
+                <article class="church-card group animate-fade-in" style="animation-delay: ${index * 100}ms">
+                    <div class="church-image-container">
+                        <img src="${church.image}" alt="${church.name}" class="church-image">
+                        <div class="location-tag shadow-sm">
+                            ${church.location}
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <span class="text-xs font-bold text-yellow-600 uppercase tracking-widest mb-2">${church.style}</span>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800 leading-tight">${church.name}</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-6 flex-grow border-b border-gray-100 pb-4">
+                            ${church.desc}
+                        </p>
+                        <button class="w-full py-3 btn-gold uppercase text-xs font-bold tracking-widest rounded-sm hover:shadow-lg">
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        renderChurches();
+
+        // Efeito de Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                // Ajustar cores dos links para preto quando o fundo for branco
+                document.querySelectorAll('.nav-link').forEach(el => {
+                    el.classList.remove('text-white');
+                    el.classList.add('text-gray-800');
+                });
+                navbar.querySelector('a span').classList.remove('text-white');
+                navbar.querySelector('a span').classList.add('text-gray-900');
+            } else {
+                navbar.classList.remove('scrolled');
+                // Voltar cores para branco
+                document.querySelectorAll('.nav-link').forEach(el => {
+                    el.classList.add('text-white');
+                    el.classList.remove('text-gray-800');
+                });
+                navbar.querySelector('a span').classList.add('text-white');
+                navbar.querySelector('a span').classList.remove('text-gray-900');
+            }
+        });
+
+        // Menu Mobile
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

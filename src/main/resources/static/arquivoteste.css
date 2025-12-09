@@ -1,0 +1,136 @@
+/* Variáveis Globais */
+:root {
+    --gold-accent: #D4AF37;
+    --gold-light: #F4C430;
+    --dark-overlay: rgba(0, 0, 0, 0.6);
+    --bg-offwhite: #f8f9fa;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--bg-offwhite);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Tipografia */
+h1, h2, h3, h4, .serif-font {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Hero Section com Parallax */
+.hero-bg {
+    background-image: url('https://images.unsplash.com/photo-1548625361-e8d356c9a873?q=80&w=1920&auto=format&fit=crop'); /* Ouro Preto */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 85vh;
+    position: relative;
+}
+
+.hero-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+    position: absolute;
+    inset: 0;
+}
+
+/* Navbar Transição */
+#navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+#navbar.scrolled a {
+    color: #1a202c;
+}
+#navbar.scrolled .logo-icon {
+    color: var(--gold-accent);
+}
+
+/* Cards das Igrejas */
+.church-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.church-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.church-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.church-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.church-card:hover .church-image {
+    transform: scale(1.1);
+}
+
+.location-tag {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Elementos Decorativos */
+.divider-gold {
+    height: 3px;
+    width: 60px;
+    background-color: var(--gold-accent);
+    margin: 1.5rem auto;
+    border-radius: 2px;
+}
+
+.btn-gold {
+    background-color: transparent;
+    color: var(--gold-accent);
+    border: 1px solid var(--gold-accent);
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: var(--gold-accent);
+    color: white;
+}
+
+/* Footer */
+.footer-pattern {
+    background-color: #1a1a1a;
+    background-image: radial-gradient(#333 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Animações Utilitárias */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
